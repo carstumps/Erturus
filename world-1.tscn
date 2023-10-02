@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://onhdjx0252bq"]
+
+[ext_resource type="PackedScene" uid="uid://bka6oaudfh8xb" path="res://blocks.tscn" id="1_ytygx"]
+[ext_resource type="Script" path="res://src/IsoPlayer.gd" id="2_witpw"]
+
+[node name="World-1" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource("1_ytygx")]
+position = Vector2(0, 0)
+layer_0/tile_data = PackedInt32Array(10682420, 65537, 7, 10682419, 65537, 7, 10682421, 65537, 7)
+chunk_size = 8
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="TileMap"]
+script = ExtResource("2_witpw")

@@ -1,5 +1,6 @@
 extends TileMap
 
+'''
 @export var chunk_size: int = 5
 # Called when the node enters the scene tree for the first time.
 
@@ -28,4 +29,4 @@ func make_chunk():
 			chunk[x].push_back(0)
 			
 	return chunk
-	
+'''

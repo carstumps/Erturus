@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1fpy5s0ek3vc"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_7mk2p"]
+[ext_resource type="Texture2D" uid="uid://dh74lm8opr40g" path="res://Assets/Walking_West-export1.png" id="2_h6cum"]
+[ext_resource type="Texture2D" uid="uid://cm1w5oyjnylyx" path="res://Assets/Walking_West-export2.png" id="3_xdnlj"]
+[ext_resource type="Texture2D" uid="uid://cdjdovcio6br6" path="res://Assets/Walking_West-export3.png" id="4_gs23l"]
+[ext_resource type="Texture2D" uid="uid://cmkug0ai4wmdn" path="res://Assets/Walking_West-export4.png" id="5_rv2bf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sw1yf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_h6cum")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xdnlj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gs23l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rv2bf")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3sou"]
+size = Vector2(40, 96)
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_7mk2p")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_sw1yf")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, -36)
+shape = SubResource("RectangleShape2D_s3sou")
+metadata/_edit_group_ = true
